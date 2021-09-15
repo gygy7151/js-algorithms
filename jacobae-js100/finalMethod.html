@@ -94,6 +94,7 @@
         //console.log(arr3.slice(1,4));
         //console.log(arr3);
 
+
         // length :  배열의 길이를 반환한다
         let arr4 = [1, 2, 3, 4, 5];
         console.log(arr4.length);
@@ -185,15 +186,143 @@
         console.log(s01.clear());
         console.log(s01);
 
-        // Map
-        
+        // Map : key와 value를 같이 저장하는 객체
+        // set() : Map객체에 key와 value를 넣고 객체를 반환
+        let m01 = new Map();
+
+        m01.set('하나', 'one');
+        m01.set('둘', 'two');
+        m01.set('셋', 'three');
+
+        console.log(m01);
+
+        // get() : 주어진 키에 해당하는 값을 반환
+        m01.set('9월제철생선', '연어');
+        console.log(m01.get('9월제철생선'));
+
+        // for-of문을 통해 순회하기
+        for (let [key, value] of m01) {
+            console.log(`${key} : ${value}`);
+        }
+
+        for (let i of m01) {
+            console.log(i);
+        }
 
         // String
+        let strone = 2;
+        let strTwo = 'two';
+        let strThree = ''
+        
+        // 템플릿 리터럴
+        console.log(`${strone}는 ${strTwo}이고 ${strThree}이다.`);
+
+        // 이스케이프 문자: \n Enter(개행), \t 탭, \ 세로탭, \`작은따옴표, \"큰따옴표, \\역슬래시
+
+        // split() : 문자열을 지정된 구분자로 나눈후 문자열 검열한후 배열로 반환
+        let strFour = '제주도 도민으로 디지털 제주도노마드를 꿈꾸다';
+        console.log(strFour.split(' '));
+
+        // 정규 표현식을 사용하여 전역을 교체
+        console.log(strFour.replace(/제주도/g ,'!')); //! 도민으로 디지털 !노마드를 꿈꾸다
+        console.log(strFour.replace(/ /g, '-')); // 제주도-도민으로-디지털-제주도노마드를-꿈꾸다
+        
+        // indexOf():주어진 문자열과 첫번째로 만나는 무자열의 인덱스를 반환한다.
+        console.log(strFour.indexOf('제주도'));
+        
+        // slice() : 인덱스를 기준으로 문자열을 반환한다.
+        console.log(strFour.slice(7));
+        console.log(strFour.slice(7, 11));
+
+        //match() : 문자열에서 정규식과 매치되는 부분을 검색하고 배열로 반환한다
+        let re = /제주도/gi;
+
+        console.log(strFour.match(re));
+
+        // toLowerCase() / toUpperCase(): 대소문자로 변환
+        let strFive = 'dkdSLDKJdfkleLDldl';
+        console.log(strFive.toLowerCase());
+        console.log(strFive.toUpperCase());
+
+        // 대소문자인지 판별하기;
+        if(strFive == strFive.toLowerCase()){
+            console.log('소문자가 맞아요옹');
+        } else if(strFive == strFive.toUpperCase()) {
+
+        } else {
+            console.log('소문자랑 대문자 믹스지로옹');
+        }
 
         // For in/ for of/ forEach
+        let arr9 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let result = 0;
 
-        // Math 메서드
+        // 1. for
+        //for (let i=0; i<arr9.length; i++) {
+        //    result += arr9[i];
+        //}
 
+        // 2. for in
+        //for (let i in arr9) {
+        //    console.log(result += arr9[i]);
+        //}
+
+
+        // 3. for of
+        //for (let i of arr9) {
+        //    console.log(result += i);
+        //}
+
+        // 4. forEach
+        arr9.forEach(x => {
+            console.log(result += x);
+        })
+
+        // Math 메서드 : 함수객체가 아님, 수학적인 상수와 함수를 위한 속성과 메서드를 가진 내장 객체. Number자료형만 지원함. 생성자가 아니므로 모든 속성과 메서드는 정적임.
+
+        // Math.abs() : 주어진 숫자의 절대값을 반환. 음수이면 양수를 반환함
+        function absfn(a, b) {
+            return Math.abs(a - b);
+        }
+        console.log(absfn(3, 5));
+        console.log(absfn(5, 3));
+
+        // Math.cbrt() : 세제곱근을 반환
+        console.log(Math.cbrt(NaN));
+        console.log(Math.cbrt(-1));
+        console.log(Math.cbrt(-0));
+        console.log(Math.cbrt(-Infinity));
+        console.log(Math.cbrt(0));
+        console.log(Math.cbrt(1));
+        console.log(Math.cbrt(null));
+        console.log(Math.cbrt(Infinity));
+        console.log(Math.cbrt(2));
+
+        // Math.ceil() :  크거나 같은 수 중 가장 작은 정수를 반환(최솟<-)
+        console.log(Math.ceil(.95));
+        console.log(Math.ceil(4));
+        console.log(Math.ceil(7.004));
+        console.log(Math.ceil(-0.95));
+        console.log(Math.ceil(-4));
+        console.log(Math.ceil(-7.004));
+
+        // Math.floor() : 작거나 같은 수 중 가장 큰 정수를 반환(최댓->)
+        console.log(Math.floor(55.59))
+        console.log(Math.floor(55.59));  
+        console.log(Math.floor(59, 1));    
+        console.log(Math.floor(-55.51));  
+        console.log(Math.floor(-51)); 
+        
+        // Math.round() : 반올림한 수와 가장 가까운 정수를 반환
+        console.log(Math.round(0.9));
+        console.log(Math.round(-0.9), Math.round(5.5), Math.round(5.05) );
+        console.log(Math.round(0.9));
+        
+
+
+        
+
+        
     </script>
 </body>
 </html>
