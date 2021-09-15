@@ -9,320 +9,175 @@
 <body>
     <script>
         // Infinity : 전역 객체의 속성으로 무한대를 나타내는 숫자값
-        //console.log(Infinity);
-        //console.log(Infinity + 1);
-        //console.log(Infinity - 1);
-        //console.log(Infinity / 1);
-        //console.log(Infinity * 1);
-        //console.log(100 / 0);
-        //console.log(Math.pow(100, 10000000));
+
 
         // NaN : Not a Number: 숫자가 아님을 나타냅니다.
-        //console.log(NaN);
-        //console.log(isNaN(NaN));
-        //console.log(isNaN(100));
-        //
-        ////undefined
-        //console.log(undefined);
+
 
         //let x;
-        //console.log(x);
 
         // null
-        //console.log(null);
-        //console.log(null + 1);
-        //console.log(null == undefined);
-        //console.log(null === undefined);
-        //console.log(typeof(null));
-        //console.log(typeof(undefined));
+
 
         //eval() : 문자열로 나타낸 자바스크립트의 명령문 또는 연산식을 실행합니다. but 지양.
-        //console.log(eval('100 + 100'));
-        //let x = 10;
-        //let y = 20;
-        //console.log(eval('x + y'));
 
         // parseInt: 문자열을 해당 진수(10진수, 16진수)의 정수로 반환한다.
-        //console.log(parseInt('100', 10));
-        //console.log(parseInt('100', 16));
-        //console.log(parseInt('100', 8));
-        //console.log(parseInt('100', 2));
-        //console.log(parseInt('100%abc', 2));
+
 
         // Number() : 인수를 숫자값으로 반환해주는데 이를 변환할 수 없으면 'NaN'을 반환한다.
-        //console.log(Number('100%abc'));
+
         
         // parseFloat : 문자열을 부동소수점 실수로 반환한다
-        //console.log(parseFloat(5,8));
-        //console.log(parseFloat('5','8')); // 맨 첫번째 인자만 부동소수점실수로 반환함
-        //console.log(parseFloat('5.8abcd'));
+
 
         // Array : 배열
-        //let arr = [1, 2, 3, 4];
-        //console.log(arr);
-        //console.log(arr[0]);
+
 
         // concat(배열) : 특정배열에 다른 배열요소 그대로 추가해서 출력하나 원 배열에 영향안줌
-        //let arr2 = ['사과', '배', '한라봉', '바나나'];
-        //let arrTwo = ['파인애플', '복숭아'];
 
-        //console.log(arr2.concat(arrTwo));
-
-        //let arr3 = ['사과', '배', '한라봉', '바나나']
 
         // push() : 배열 끝에 항목추가. 원배열에 영향준다.
-        //console.log(arr3.push('파인애플'));
-        //console.log(arr3);
+
 
         // pop() : 배열 끝에서 항목제거. 원배열에 영향준다.
-        //console.log(arr3.pop());
-        //console.log(arr3);
+
 
         // unshift() : 배열 앞에 항목 추가. 원배열에 영향준다.
-        //console.log(arr3.unshift('파인애플'));
-        //console.log(arr3);
+
 
         // shift() : 배열 앞에서 항목 제거. 원배열에 영향준다.
-        //console.log(arr3.shift());
-        //console.log(arr3);
+
 
         // splice() : 요소를 삭제하거나 교체한다. 원배열에 영향준다.
-        //console.log(arr3.splice(2 , 1, '파인애플'));
-        //console.log(arr3);
+
 
         // slice() : 요소를 인덱스 기준으로 잘라낸다. 원배열엔 영향안준다.
-        //console.log(arr3.slice(1,4));
-        //console.log(arr3);
+
 
 
         // length :  배열의 길이를 반환한다
-        let arr4 = [1, 2, 3, 4, 5];
-        console.log(arr4.length);
+
 
         // fill() : 해당값으로 배열을 채운다
-        console.log(arr4.fill(0));
-        console.log(arr4.fill(1, 1, 3));
-        console.log(arr4.fill(3, 2));
+
 
         // filter() : 조건을 만족하는 항목들만 배열로 반환한다
-        let score = [40, 80, 75, 90, 35, 81]
-        let message = ['홍길동', '홍홍길동', '길길동동', '길길길'];
-
-        console.log(score.filter(x => x > 80));
-        console.log(message.filter(x => x.length == 3)); //여기서 x.length는 요소 자체의 단어길이임
+        //여기서 x.length는 요소 자체의 단어길이임
 
         // flat() : 배열구멍제거, 모든 하위 배열요소를 지정한 깊이까지 재귀적으로 이어붙인 새로운 배열을 생성
-        let matrix = [1, 2, 3, [1, 2, 3, [10, 20]]];
-        console.log(matrix.flat());
-        console.log(matrix.flat(2));
+
 
         // includes() : 배열이 특정 항목을 포함하고 있는지 확인한다. 불리언값 리턴
-        let fruits = ['사과', '배', '한라봉', '바나나'];
-        fruits.includes('사과');
-        fruits.includes('포도');
+
 
         // join() : 배열의 항목들은 특정 값으로 이어붙임
-        let arr5 = [1, 2, 3, 4, 5];
-        console.log(arr5.join('!'));
-        console.log(arr5.join('-'));
+
 
         // map() : 배열을 순회하며 함수를 실행한 결과로 새로운 배열을 만들어 반환
-        let arr6 = [1, 2, 3, 4, 5];
-        let arrSix = ['1', '2', '3', '4', '5'];
 
-        function coding(x) {
-            return x**2;
-        }
-
-        console.log(arr6.map(coding));
-        console.log(arrSix.map(x => parseInt(x, 10)));
 
         // sort : 배열을 순회하며 함수를 실행한 결과로 새로운 배열을 만들어 반환한다
 
-        let arr7 = [1, 2, 100, 10, 222, 3];
+
 
         // sort()는 유니코드에 따라 정렬한다
-        console.log(arr7.sort());
+
 
         // 배열 score를 오름차순으로 정렬하기
-        score.sort((a, b) => {
-            return a - b ;
-        });
 
 
-        console.log(score);
-        
         // 배열 score를 내림차순으로 정렬하기
-        score.sort((a,b) => {
-            return b - a;
-        })
 
-        console.log(score);
 
         // reverse() : 배열을 역순으로 정렬한 후 그 배열을 반환
-        console.log(arr7.reverse());
+
 
         // Set : 중복값을 제외한 유일한 값을 저장한다
-        let arr8 = [1, 1, 2, 2, 3, 3, 4, 4];
-        let s01 = new Set(arr8);
 
-        console.log(s01);
         // Set의 크기는 length가 아닌 size를 통해 구할 수 있다.
         // size : 값의 개수를 반환한다
-        console.log(s01.size);
-        console.log(s01.length);
+
 
         // has() : 특정값을 가지고 있는지 확인 할 수 있다.
-        console.log(s01.has(1));
+
 
         // add() : 새로운 요소를 배열에 직접 추가한다 이때 인스턴스에 추가해야 에러안뜸. 배열에 직접 메소드 적용안됨. 문자는 ''따옴표안에 넣어줘야됨
-        console.log(s01.add(5));
-        console.log(s01.add('df'));
-        
+
         // delete() : 해당요소를 삭제한다
-        console.log(s01.delete('df'));
+
 
         // clear() : 배열안의 모든요소를 삭제
-        console.log(s01.clear());
-        console.log(s01);
 
         // Map : key와 value를 같이 저장하는 객체
         // set() : Map객체에 key와 value를 넣고 객체를 반환
-        let m01 = new Map();
 
-        m01.set('하나', 'one');
-        m01.set('둘', 'two');
-        m01.set('셋', 'three');
-
-        console.log(m01);
 
         // get() : 주어진 키에 해당하는 값을 반환
-        m01.set('9월제철생선', '연어');
-        console.log(m01.get('9월제철생선'));
+
 
         // for-of문을 통해 순회하기
-        for (let [key, value] of m01) {
-            console.log(`${key} : ${value}`);
-        }
 
-        for (let i of m01) {
-            console.log(i);
-        }
 
         // String
-        let strone = 2;
-        let strTwo = 'two';
-        let strThree = ''
+
         
         // 템플릿 리터럴
-        console.log(`${strone}는 ${strTwo}이고 ${strThree}이다.`);
+
 
         // 이스케이프 문자: \n Enter(개행), \t 탭, \ 세로탭, \`작은따옴표, \"큰따옴표, \\역슬래시
 
         // split() : 문자열을 지정된 구분자로 나눈후 문자열 검열한후 배열로 반환
-        let strFour = '제주도 도민으로 디지털 제주도노마드를 꿈꾸다';
-        console.log(strFour.split(' '));
+
 
         // 정규 표현식을 사용하여 전역을 교체
-        console.log(strFour.replace(/제주도/g ,'!')); //! 도민으로 디지털 !노마드를 꿈꾸다
-        console.log(strFour.replace(/ /g, '-')); // 제주도-도민으로-디지털-제주도노마드를-꿈꾸다
+
         
         // indexOf():주어진 문자열과 첫번째로 만나는 무자열의 인덱스를 반환한다.
-        console.log(strFour.indexOf('제주도'));
+
         
         // slice() : 인덱스를 기준으로 문자열을 반환한다.
-        console.log(strFour.slice(7));
-        console.log(strFour.slice(7, 11));
+
 
         //match() : 문자열에서 정규식과 매치되는 부분을 검색하고 배열로 반환한다
-        let re = /제주도/gi;
 
-        console.log(strFour.match(re));
 
         // toLowerCase() / toUpperCase(): 대소문자로 변환
-        let strFive = 'dkdSLDKJdfkleLDldl';
-        console.log(strFive.toLowerCase());
-        console.log(strFive.toUpperCase());
+
 
         // 대소문자인지 판별하기;
-        if(strFive == strFive.toLowerCase()){
-            console.log('소문자가 맞아요옹');
-        } else if(strFive == strFive.toUpperCase()) {
 
-        } else {
-            console.log('소문자랑 대문자 믹스지로옹');
-        }
 
         // For in/ for of/ forEach
-        let arr9 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        let result = 0;
+
 
         // 1. for
-        //for (let i=0; i<arr9.length; i++) {
-        //    result += arr9[i];
-        //}
+
 
         // 2. for in
-        //for (let i in arr9) {
-        //    console.log(result += arr9[i]);
-        //}
+
 
 
         // 3. for of
-        //for (let i of arr9) {
-        //    console.log(result += i);
-        //}
+
 
         // 4. forEach
-        arr9.forEach(x => {
-            console.log(result += x);
-        })
+
 
         // Math 메서드 : 함수객체가 아님, 수학적인 상수와 함수를 위한 속성과 메서드를 가진 내장 객체. Number자료형만 지원함. 생성자가 아니므로 모든 속성과 메서드는 정적임.
 
         // Math.abs() : 주어진 숫자의 절대값을 반환. 음수이면 양수를 반환함
-        function absfn(a, b) {
-            return Math.abs(a - b);
-        }
-        console.log(absfn(3, 5));
-        console.log(absfn(5, 3));
+
 
         // Math.cbrt() : 세제곱근을 반환
-        console.log(Math.cbrt(NaN));
-        console.log(Math.cbrt(-1));
-        console.log(Math.cbrt(-0));
-        console.log(Math.cbrt(-Infinity));
-        console.log(Math.cbrt(0));
-        console.log(Math.cbrt(1));
-        console.log(Math.cbrt(null));
-        console.log(Math.cbrt(Infinity));
-        console.log(Math.cbrt(2));
 
         // Math.ceil() :  크거나 같은 수 중 가장 작은 정수를 반환(최솟<-)
-        console.log(Math.ceil(.95));
-        console.log(Math.ceil(4));
-        console.log(Math.ceil(7.004));
-        console.log(Math.ceil(-0.95));
-        console.log(Math.ceil(-4));
-        console.log(Math.ceil(-7.004));
+
 
         // Math.floor() : 작거나 같은 수 중 가장 큰 정수를 반환(최댓->)
-        console.log(Math.floor(55.59))
-        console.log(Math.floor(55.59));  
-        console.log(Math.floor(59, 1));    
-        console.log(Math.floor(-55.51));  
-        console.log(Math.floor(-51)); 
+
         
         // Math.round() : 반올림한 수와 가장 가까운 정수를 반환
-        console.log(Math.round(0.9));
-        console.log(Math.round(-0.9), Math.round(5.5), Math.round(5.05) );
-        console.log(Math.round(0.9));
-        
 
-
-        
-
-        
     </script>
 </body>
 </html>
